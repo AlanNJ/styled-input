@@ -7,11 +7,12 @@ type InputProps = {
 	fontColor?: string;
 	width?: number;
 	fontSize?: number;
-	value?: string;
+	value?: any;
 	background?: string;
 	borderColor?: string;
 	inputType?: string;
 	children: React.ReactNode;
+	handler?: any;
 };
 
 const InputComponent = ({
@@ -24,8 +25,10 @@ const InputComponent = ({
 	borderColor,
 	inputType,
 	children,
+	value,
+	handler,
 }: InputProps) => {
-	const [value, setValue] = useState("");
+	//const [value, setValue] = useState("");
 	const [matched, setMatched] = useState(false);
 
 	const inputRef = useRef<HTMLInputElement | null>(null);
@@ -47,11 +50,11 @@ const InputComponent = ({
 			}
 		}
 	}, [value]);
-	console.log(value);
-	// value.length ? matched : null;
-	if (inputRef.current?.focus()) {
-		console.log("hello");
-	}
+
+	// // value.length ? matched : null;
+	// if (inputRef.current?.focus()) {
+	// 	console.log("hello");
+	// }
 	const focusLabel = (e: any) => {
 		if (inputRef.current && labelRef.current) {
 			labelRef.current.style.border = borderColor
@@ -78,7 +81,7 @@ const InputComponent = ({
 					<input
 						ref={inputRef}
 						type={`${inputType}`}
-						onChange={(e) => setValue(e.target.value)}
+						onChange={(e) => handler(e.target.value)}
 						value={value}
 						className={value && "typed-input"}
 						style={{
