@@ -1,0 +1,145 @@
+.container {
+	padding: 1rem 0;
+	display: flex;
+	align-items: center;
+	height: 10px;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+.input-wrapper {
+	position: relative;
+}
+
+.input-wrapper input {
+	border: 1px solid rgba(255, 255, 255, 0.25);
+
+	outline: none;
+
+	border-radius: 5px;
+
+	padding: 10px;
+	margin: 5px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.input-wrapper span {
+	position: relative;
+	top: 50%;
+
+	padding: 0 10px;
+	text-transform: uppercase;
+	transition: 0.5s;
+}
+.input-wrapper input:focus ~ span {
+	position: relative;
+	top: 0;
+	left: 15px;
+	transform: translateX(150px) !important;
+	font-size: 0.6em;
+	padding: 3px 5px;
+	background: rgb(59, 64, 83);
+	border-left: 2px solid #00dfc4;
+	border-right: 2px solid #00dfc4;
+	font-weight: 500;
+	border: 0.5px dotted;
+}
+.typed {
+	color: #00dfc4;
+	position: relative;
+	left: 15px;
+	top: -5px !important;
+
+	transform: translateX(15px);
+	font-size: 0.7em;
+	padding: 3px 5px !important;
+
+	border-left: 2px solid #00dfc4;
+	border-right: 2px solid #00dfc4;
+	border-radius: 2px;
+	font-weight: 500;
+}
+.typed-input {
+	border: 1px solid #00dfc4 !important;
+}
+.filled {
+	background: #00dfc4;
+}
+.container p {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	color: white;
+	right: 15%;
+}
+.input-right {
+	position: relative;
+	right: 10%;
+}
+.input-right span {
+	color: white;
+}
+.input-right :nth-child(2) {
+	transform: rotate(-40deg);
+}
+.cross-mark {
+	position: relative;
+	left: 95%;
+}
+
+.cross-mark::after {
+	position: relative;
+	content: "";
+	bottom: 50%;
+
+	content: "\274c";
+
+	color: #fff;
+
+	text-align: center;
+	font-size: 0.5rem;
+}
+#tick-mark {
+	position: absolute;
+
+	width: 20px;
+	height: 20px;
+	top: 100%;
+	transform: translateY(-50%) scale(0.7);
+
+	transition: 1s ease;
+}
+
+#tick-mark::before {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 10px;
+	width: 3px;
+	background-color: #00dfc4;
+	content: "";
+	transform: translateY(-50%) rotate(-45deg);
+	transform-origin: left bottom;
+	transition: 1s ease;
+}
+
+#tick-mark::after {
+	position: absolute;
+
+	top: 50%;
+	height: 3px;
+	width: 18px;
+	background-color: #00dfc4;
+	content: "";
+	transform: translateY(72%) rotate(-45deg);
+	transform-origin: left bottom;
+	transition: 1s ease;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
